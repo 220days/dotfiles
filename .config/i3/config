@@ -114,16 +114,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1: main"
-set $ws2 "2: www"
-set $ws3 "3: other"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws1 "1:  main"
+set $ws2 "2:  www"
+set $ws3 "3:  note"
+set $ws4 "4:  chat"
+set $ws5 "5:"
+set $ws6 "6:"
+set $ws7 "7:"
+set $ws8 "8: game"
+set $ws9 "9: other "
+set $ws10 "10:"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -190,16 +190,20 @@ bar {
 }
 
 # Display Wallpaper
-exec --nostartup-id xwinwrap -g 1920x1080+0+0 -ov -- mpv -wid WID --loop --no-audio --no-osc --no-osd-bar /home/z20/Videos/wallpaper/Blakhole1920P.webm
+#exec --nostartup-id xwinwrap -g 1920x1080+0+0 -ov -- mpv -wid WID --loop --no-audio --no-osc --no-osd-bar /home/z20/Videos/wallpaper/Blakhole1920P.webm &
 
 # ai says i need it for dark 
 exec --no-startup-id xsettingsd
 
-# Allocate applications to workspaces
-for_window [class="zen"] move to workspace $ws2
-for_window [class="ferdium"] move to workspace $ws3
+# Allocate applications to workspaces "xprop"
 for_window [class="dev.zed.Zed"] move to workspace $ws1
+for_window [class="zen"] move to workspace $ws2
+for_window [class="QOwnNotes"] move to workspace $ws3
+for_window [class="ferdium"] move to workspace $ws4
+for_window [class="heroic"] move to workspace $ws8
 
 # Transparency with picom compositor
 exec_always picom -f
+
+
 
