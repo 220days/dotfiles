@@ -100,14 +100,16 @@ source $ZSH/oh-my-zsh.sh
 # $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
 #
-alias zshconfig="mate ~/.zshrc"
-alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="micro  ~/.zshrc"
+alias ohmyzsh="micro ~/.oh-my-zsh"
 alias catt="bat"
 alias ls="lsd"
 alias lss="lsd -a"
-alias zarc="tar --zstd -cvf"
+alias zarc="tar -xf"
 alias zarx="tar --zstd -xvf"
 alias dotfile='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias Mzarc='tar -I 'zstd -T$(nproc) -19' -cpf'
+
 
 # functions
 
