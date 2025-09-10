@@ -186,6 +186,8 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+	status_command i3blocks -c /home/z20/.config/i3blocks/i3blocks.conf
+	position top
 	font pango: Droid Sans Mono 13
 	i3bar_command i3bar --transparency
 #	tray_output none
@@ -233,3 +235,15 @@ client.focused_inactive $in-bgcolor     $in-bgcolor     $in-text        $in-bgco
 client.urgent           $u-bgcolor      $u-bgcolor      $text           $u-bgcolor 
 set $focused-ws #523d6480
 set $bar-color  #523d640D
+
+# no window  header
+default_border pixel 0
+default_floating_border pixel 0
+for_window [class=".*"] border pixel 0
+
+# Inner gaps: space between adjacent windows
+gaps inner 5
+
+# Outer gaps: space between windows and screen edges
+gaps outer 3
+
